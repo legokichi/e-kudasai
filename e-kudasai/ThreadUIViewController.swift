@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ThreadUIViewController: UIViewController {
     var entry: NSDictionary? = nil
     @IBOutlet var _id: UILabel?

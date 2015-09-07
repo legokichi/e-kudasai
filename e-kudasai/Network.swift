@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//import UIKit
 
 // see also
 // https://github.com/pixiv/summer-intern-2015-a

@@ -26,8 +26,8 @@
         <!--Threads View-->
         <scene sceneID="x2C-y8-aPF">
             <objects>
-                <tableViewController id="HVy-qb-ZFD" userLabel="Threads View" customClass="ThreadTitleListTableViewController" customModule="e_kudasai" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="k8V-65-mYy">
+                <tableViewController id="HVy-qb-ZFD" userLabel="Threads View" customClass="ThreadHeadlineTableViewController" customModule="e_kudasai" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="k8V-65-mYy" customClass="ThreadHeadlineTableView" customModule="e_kudasai" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

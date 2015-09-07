@@ -7,7 +7,8 @@
 //
 
 import UIKit
-class ThreadTitleListTableViewController: UITableViewController {
+
+class ThreadHeadlineTableViewController: UITableViewController {
     var entries: [NSDictionary] = []
     
     // UIViewController
@@ -21,6 +22,8 @@ class ThreadTitleListTableViewController: UITableViewController {
                 self.entries = dirs as! [NSDictionary]
             }
             dispatch_async_main{
+                let xib = UINib(nibName: "ThreadHeadlineCellTableViewCell", bundle: nil)
+                self.tableView?.registerNib(xib, forCellReuseIdentifier: "ThreadHeadlineCellTabeleViewCell")
                 self.tableView?.reloadData()
             }
         })

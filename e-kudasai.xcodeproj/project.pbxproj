@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		147F4E3C1B9D8BDB00C50418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E3B1B9D8BDB00C50418 /* AppDelegate.swift */; };
-		147F4E3E1B9D8BDB00C50418 /* ThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E3D1B9D8BDB00C50418 /* ThreadsTableViewController.swift */; };
+		147F4E3E1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E3D1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift */; };
 		147F4E431B9D8BDB00C50418 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147F4E411B9D8BDB00C50418 /* Main.storyboard */; };
 		147F4E451B9D8BDB00C50418 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147F4E441B9D8BDB00C50418 /* Images.xcassets */; };
 		147F4E481B9D8BDB00C50418 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147F4E461B9D8BDB00C50418 /* LaunchScreen.xib */; };
@@ -16,6 +16,9 @@
 		147F4E5E1B9D8CFE00C50418 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E5D1B9D8CFE00C50418 /* Network.swift */; };
 		147F4E601B9D92D700C50418 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E5F1B9D92D700C50418 /* Util.swift */; };
 		147F4E681B9DD5E900C50418 /* ThreadUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E671B9DD5E900C50418 /* ThreadUIViewController.swift */; };
+		14D885DB1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D885D91B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift */; };
+		14D885DC1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D885DA1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib */; };
+		14D885DE1B9DFAE8007B333E /* ThreadHeadlineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D885DD1B9DFAE8007B333E /* ThreadHeadlineTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +35,7 @@
 		147F4E361B9D8BDB00C50418 /* e-kudasai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-kudasai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		147F4E3A1B9D8BDB00C50418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		147F4E3B1B9D8BDB00C50418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		147F4E3D1B9D8BDB00C50418 /* ThreadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableViewController.swift; sourceTree = "<group>"; };
+		147F4E3D1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHeadlineTableViewController.swift; sourceTree = "<group>"; };
 		147F4E421B9D8BDB00C50418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		147F4E441B9D8BDB00C50418 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		147F4E471B9D8BDB00C50418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,6 +45,9 @@
 		147F4E5D1B9D8CFE00C50418 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		147F4E5F1B9D92D700C50418 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		147F4E671B9DD5E900C50418 /* ThreadUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadUIViewController.swift; sourceTree = "<group>"; };
+		14D885D91B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadHeadlineCellTableViewCell.swift; sourceTree = "<group>"; };
+		14D885DA1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadHeadlineCellTableViewCell.xib; sourceTree = "<group>"; };
+		14D885DD1B9DFAE8007B333E /* ThreadHeadlineTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadHeadlineTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +90,11 @@
 			isa = PBXGroup;
 			children = (
 				147F4E3B1B9D8BDB00C50418 /* AppDelegate.swift */,
-				147F4E3D1B9D8BDB00C50418 /* ThreadsTableViewController.swift */,
+				147F4E3D1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift */,
+				14D885DD1B9DFAE8007B333E /* ThreadHeadlineTableView.swift */,
 				147F4E671B9DD5E900C50418 /* ThreadUIViewController.swift */,
+				14D885D91B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift */,
+				14D885DA1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib */,
 				147F4E5F1B9D92D700C50418 /* Util.swift */,
 				147F4E5D1B9D8CFE00C50418 /* Network.swift */,
 				147F4E411B9D8BDB00C50418 /* Main.storyboard */,
@@ -202,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				147F4E431B9D8BDB00C50418 /* Main.storyboard in Resources */,
+				14D885DC1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib in Resources */,
 				147F4E481B9D8BDB00C50418 /* LaunchScreen.xib in Resources */,
 				147F4E451B9D8BDB00C50418 /* Images.xcassets in Resources */,
 			);
@@ -223,9 +233,11 @@
 			files = (
 				147F4E3C1B9D8BDB00C50418 /* AppDelegate.swift in Sources */,
 				147F4E5E1B9D8CFE00C50418 /* Network.swift in Sources */,
+				14D885DE1B9DFAE8007B333E /* ThreadHeadlineTableView.swift in Sources */,
 				147F4E681B9DD5E900C50418 /* ThreadUIViewController.swift in Sources */,
 				147F4E601B9D92D700C50418 /* Util.swift in Sources */,
-				147F4E3E1B9D8BDB00C50418 /* ThreadsTableViewController.swift in Sources */,
+				147F4E3E1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift in Sources */,
+				14D885DB1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
