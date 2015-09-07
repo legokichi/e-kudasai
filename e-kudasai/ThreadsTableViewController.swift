@@ -17,7 +17,9 @@ class ThreadTitleListTableViewController: UITableViewController {
         
         super.viewDidLoad()
         get_titles({ (statusCode, dirs) in
-            self.entries = dirs as! [NSDictionary]
+            if dirs != nil {
+                self.entries = dirs as! [NSDictionary]
+            }
             dispatch_async_main{
                 self.tableView?.reloadData()
             }
@@ -30,9 +32,18 @@ class ThreadTitleListTableViewController: UITableViewController {
         if segue.identifier == "showThread" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let entry = self.entries[indexPath.row]
+                println(segue.destinationViewController)
+                (segue.destinationViewController as! UIViewController).title = (entry["title"] as! String) ?? "no title"
                 (segue.destinationViewController as! ThreadUIViewController).entry = entry
             }
         }
+    }
+    
+    // UITableViewDelegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //Cellが選択された際に呼び出されるデリゲートメソッド.
+        println(indexPath.row)
+        self.performSegueWithIdentifier("showThread", sender: self)
     }
     
     // UITableViewDataSource

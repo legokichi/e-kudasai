@@ -22,16 +22,16 @@
             </objects>
             <point key="canvasLocation" x="-1251" y="-1213"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Threads View-->
         <scene sceneID="x2C-y8-aPF">
             <objects>
-                <tableViewController id="HVy-qb-ZFD" customClass="ThreadTitleListTableViewController" customModule="e_kudasai" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HVy-qb-ZFD" userLabel="Threads View" customClass="ThreadTitleListTableViewController" customModule="e_kudasai" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="k8V-65-mYy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="bui-0d-cFE" style="IBUITableViewCellStyleDefault" id="Glx-wa-DzJ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ThreadTitleCell" textLabel="bui-0d-cFE" style="IBUITableViewCellStyleDefault" id="Glx-wa-DzJ">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Glx-wa-DzJ" id="G89-PD-bb6">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -39,13 +39,13 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bui-0d-cFE">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="uS7-w3-o3W" kind="show" identifier="showThread" id="4DF-j0-KLp"/>
+                                    <segue destination="axY-J7-Y1K" kind="show" identifier="showThread" id="rNt-36-NsF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,32 +60,23 @@
             </objects>
             <point key="canvasLocation" x="157" y="-1213"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="t7v-S8-8UI">
+        <!--ThreadUI View Controller-->
+        <scene sceneID="0ub-M5-fx2">
             <objects>
-                <viewController id="uS7-w3-o3W" customClass="ThreadUIViewController" customModule="e_kudasai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="axY-J7-Y1K" customClass="ThreadUIViewController" customModule="e_kudasai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kfl-1g-Bwc"/>
-                        <viewControllerLayoutGuide type="bottom" id="3Hb-Wv-uIf"/>
+                        <viewControllerLayoutGuide type="top" id="T71-Kt-93b"/>
+                        <viewControllerLayoutGuide type="bottom" id="qLV-Ld-vZU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ds5-Af-a8w">
+                    <view key="view" contentMode="scaleToFill" id="pxX-8W-OWJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcU-70-Cbb">
-                                <rect key="frame" x="110" y="84" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="pNm-gt-yGn"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8p2-ao-atN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHw-Zy-gyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="-1213"/>
+            <point key="canvasLocation" x="845" y="-1213"/>
         </scene>
         <!--Home-->
         <scene sceneID="zy0-3J-hc0">
