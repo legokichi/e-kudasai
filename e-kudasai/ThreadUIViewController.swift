@@ -8,16 +8,14 @@
 
 import UIKit
 
-typealias Response = (
-    date: Int,
-    user_name: Int,
-    illust_id: Int,
-    illust_url: Int,
-    like: Int
-)
 
 class ThreadUIViewController: UIViewController {
     var entry: NSDictionary? = nil
+    @IBOutlet var _id: UILabel?
+    @IBOutlet var _date: UILabel?
+    @IBOutlet var _title: UILabel?
+    @IBOutlet var _user_name: UILabel?
+    
 
     override func viewDidLoad() {
         if self.entry == nil || self.entry!["title_id"] == nil {
@@ -34,8 +32,8 @@ class ThreadUIViewController: UIViewController {
                 let date = (dir!["date"]! as! String).toInt()! // 気持ち悪い
                 let title = dir!["title"]! as! String
                 let user_name = dir!["user_name"]! as! String
-                let responses = dir!["responses"]! as! [NSDictionary]
-                let _res = responses.map({(_dir:NSDictionary)-> Response in
+                let _responses = dir!["responses"]! as! [NSDictionary]
+                let responses = _responses.map({(_dir:NSDictionary)-> Response in
                     (
                         date: _dir["date"] as! Int,
                         user_name: _dir["user_name"] as! Int,
@@ -44,6 +42,12 @@ class ThreadUIViewController: UIViewController {
                         like: _dir["like"] as! Int
                     )
                 })
+                dispatch_async_main{
+                    self._id!.text = String(id)
+                    self._title!.text = title
+                    self._user_name!.text = user_name
+                    self._date!.text = String(date)
+                }
             }
         })
 

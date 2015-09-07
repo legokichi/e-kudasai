@@ -7,10 +7,15 @@
 //
 
 import Foundation
+
 func dispatch_async_main(block: () -> ()) {
     dispatch_async(dispatch_get_main_queue(), block)
 }
 
 func dispatch_async_global(block: () -> ()) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+}
+
+func typeof<T>(a: T)-> String {
+    return "\(a.dynamicType)"
 }

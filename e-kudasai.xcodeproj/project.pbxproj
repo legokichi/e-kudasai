@@ -421,6 +421,7 @@
 				147F4E591B9D8BDB00C50418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		147F4E5A1B9D8BDB00C50418 /* Build configuration list for PBXNativeTarget "e-kudasaiTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +430,7 @@
 				147F4E5C1B9D8BDB00C50418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -15,6 +15,46 @@ import Foundation
 
 // ===========
 
+typealias User = (
+    user_id: Int,
+    date: Int
+)
+
+typealias Response = (
+    date: Int,
+    user_name: Int,
+    illust_id: Int,
+    illust_url: Int,
+    like: Int
+)
+
+typealias Reaction = (
+    id: Int,
+    date: Int,
+    title: String,
+    user_name: Int,
+    responses: [Response]
+)
+
+typealias Title = (
+    title_id: Int,
+    date: Int,
+    user_name: String,
+    title: String,
+    illusts : [String],
+    count: Int
+)
+
+typealias Illust = (
+    date: Int,
+    user_name: String,
+    illust_id: Int,
+    illust_url: String
+)
+
+typealias Favolite = User
+
+
 let baseURL = "http://133.242.234.139/api/"
 
 func register_new_user(callback: (Int, NSDictionary?) -> Void ) -> Void {
