@@ -10,42 +10,56 @@ import UIKit
 
 class ThreadVC: UIViewController {
     
-    var entry: NSDictionary? = nil
-
+    var title_id: Int? = nil
+    var date: Int? = nil
+    var _title_: String? = nil
+    var user_name: String? = nil
+    var responses: [Response] = []
+    var storage: NSUserDefaults = NSUserDefaults()
+    
     @IBOutlet var _id: UILabel?
     @IBOutlet var _date: UILabel?
     @IBOutlet var _title: UILabel?
     @IBOutlet var _user_name: UILabel?
-
+    
+    @IBAction func tapButton(sender : AnyObject) {}
+    
+    // UIViewController
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showPostPage" {
+            let view = segue.destinationViewController as! PostIllustVC
+            view.title_id = self.title_id!
+        }
+    }
+    
+    // UIViewController
     override func viewDidLoad() {
-        if self.entry == nil || self.entry!["title_id"] == nil {
+        if self.title_id == nil {
             super.viewDidLoad()
             return
         }
         super.viewDidLoad()
-        let title_id = self.entry!["title_id"]! as! Int // castに一貫性がなくJSONParserが怪しい
-        get_responses(title_id, { (statusCode, dir) in
-            println(dir)
-            if dir != nil {
-                let id = (dir!["id"]! as! String).toInt()! // でもこうしないと落ちる
-                let date = (dir!["date"]! as! String).toInt()! // 気持ち悪い
-                let title = dir!["title"]! as! String
-                let user_name = dir!["user_name"]! as! String
-                let _responses = dir!["responses"]! as! [NSDictionary]
-                let responses = _responses.map({(_dir:NSDictionary)-> Response in
-                    (
-                        date: _dir["date"] as! Int,
-                        user_name: _dir["user_name"] as! Int,
-                        illust_id: _dir["illust_id"] as! Int,
-                        illust_url: _dir["illust_url"] as! Int,
-                        like: _dir["like"] as! Int
-                    )
-                })
-                dispatch_async_main{
-                    self._id!.text = String(id)
-                    self._title!.text = title
-                    self._user_name!.text = user_name
-                    self._date!.text = String(date)
+        get_responses(self.title_id!, { (statusCode, dir) in
+            dispatch_async_main{
+                if dir != nil {
+                    //id = (dir!["id"]! as! String).toInt()!
+                    self.date = (dir!["date"]! as! String).toInt()!
+                    self._title_ = dir!["title"]! as! String
+                    self.user_name = dir!["user_name"]! as! String
+                    let _responses = dir!["responses"]! as! [NSDictionary]
+                    self.responses = _responses.map({(_dir) in
+                        println(_dir)
+                        return (
+                            date: (_dir["date"]! as! String).toInt()!,
+                            user_name: _dir["user_name"]! as! String,
+                            illust_id: _dir["illust_id"]! as! Int,
+                            likes: _dir["likes"]! as! Int
+                        )
+                    })
+                    self._id!.text = "\(self.title_id!)"
+                    self._title!.text = self._title_
+                    self._user_name!.text = self.user_name
+                    self._date!.text = "\(self.date!)"
                 }
             }
         })

@@ -9,7 +9,7 @@
 import UIKit
 
 class ThreadHeadlineTVC: UITableViewController {
-    var entries: [NSDictionary] = []
+    var entries: [Thread] = []
     
     // UIViewController
     override func viewDidLoad() {
@@ -20,10 +20,20 @@ class ThreadHeadlineTVC: UITableViewController {
         super.viewDidLoad()
         
         get_titles({ (statusCode, dirs) in
-            if dirs != nil {
-                self.entries = dirs as! [NSDictionary]
-            }
             dispatch_async_main{
+                if dirs != nil {
+                    let _dirs = dirs as! [NSDictionary]
+                    self.entries = _dirs.map({(dir) in
+                        return (
+                            title_id: dir["title_id"]! as! Int,
+                            date: (dir["date"]! as! String).toInt()!, // 謎cast
+                            user_name: dir["user_name"]! as! String,
+                            title: dir["title"]! as! String,
+                            illusts : dir["illusts"]! as! [String],
+                            count:  dir["count"]! as! Int
+                        )
+                    })
+                }
                 self.tableView?.reloadData()
             }
         })
@@ -35,8 +45,9 @@ class ThreadHeadlineTVC: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let entry = self.entries[indexPath.row]
                 let view = segue.destinationViewController as! ThreadVC
-                view.title = (entry["title"] as! String) ?? "no title"
-                view.entry = entry
+                println(entry.title)
+                view.title = entry.title
+                view.title_id = entry.title_id
             }
         }
     }
@@ -57,13 +68,11 @@ class ThreadHeadlineTVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         println(self.tableView.dequeueReusableCellWithIdentifier("THCell")!)
         let cell = self.tableView.dequeueReusableCellWithIdentifier("THCell") as! ThreadHeadlineCell
-        let dir = entries[indexPath.row]
-        var title = (dir["title"] as! String) ?? "no title"
+        let entry = entries[indexPath.row]
+        var title = entry.title
         cell._title!.text = title
-        println("== Hoge ==")
-        println(cell._image)
-        cell._image?.loadAsyncFromURL("http://www.duxca.com/apple-touch-icon-72x72.png")
-
+        //println(cell._image)
+        //cell._image?.loadAsyncFromURL("http://www.duxca.com/apple-touch-icon-72x72.png")
         return cell
     }
 }

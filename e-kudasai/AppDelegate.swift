@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-
+        // なりすまし
+        self.storage.setObject(1, forKey: "user_id")
+        // しますりな
         if storage.objectForKey("user_id") == nil {
             register_new_user({(statusCode, dir) in
                 if dir != nil && dir!["user_id"] != nil {

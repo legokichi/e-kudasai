@@ -21,30 +21,20 @@ typealias User = (
 
 typealias Response = (
     date: Int,
-    user_name: Int,
+    user_name: String,
     illust_id: Int,
-    illust_url: Int,
-    like: Int
+    likes: Int
 )
-
-/*typealias Reaction = (
-    id: Int,
-    date: Int,
-    title: String,
-    user_name: Int,
-    responses: [Response]
-)*/
 
 typealias Reaction = (
     type: Int,
     date: Int,
     title: String,
     title_id: Int,
-    illust_id: Int,
-    illust_url: String
+    illust_id: Int?
 )
 
-typealias Title = (
+typealias Thread = (
     title_id: Int,
     date: Int,
     user_name: String,
@@ -56,8 +46,7 @@ typealias Title = (
 typealias Illust = (
     date: Int,
     user_name: String,
-    illust_id: Int,
-    illust_url: String
+    illust_id: Int
 )
 
 typealias Favolite = User
@@ -107,12 +96,13 @@ func post_title(user_id: Int, title: String, callback: (Int, NSDictionary?) -> V
     )
 }
 
-func post_illust(title_id: Int, user_id: Int, rawJPG: NSData, callback: (Int, NSDictionary?) -> Void ) -> Void {
+func post_illust(title_id: Int, user_id: Int, user_name: String, rawJPG: NSData, callback: (Int, NSDictionary?) -> Void ) -> Void {
     post(
         baseURL+"post_illust.php",
         [
             ("title_id",    "text/plain", "\(title_id)".dataUsingEncoding(NSUTF8StringEncoding)!),
             ("user_id",  "text/plain", "\(user_id)".dataUsingEncoding(NSUTF8StringEncoding)!),
+            ("user_name", "text/plain", user_name.dataUsingEncoding(NSUTF8StringEncoding)!),
             ("file", "image/jpeg", rawJPG)
         ],
         {(statusCode, data) in
