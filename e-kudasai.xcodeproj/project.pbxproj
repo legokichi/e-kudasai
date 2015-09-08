@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144248261B9E08D400262202 /* IllustCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144248241B9E08D400262202 /* IllustCell.swift */; };
+		144248271B9E08D400262202 /* IllustCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144248251B9E08D400262202 /* IllustCell.xib */; };
+		144248291B9E7A5000262202 /* ReactionHeadlineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144248281B9E7A5000262202 /* ReactionHeadlineVC.swift */; };
 		147F4E3C1B9D8BDB00C50418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E3B1B9D8BDB00C50418 /* AppDelegate.swift */; };
-		147F4E3E1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E3D1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift */; };
+		147F4E3E1B9D8BDB00C50418 /* ThreadHeadlineTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E3D1B9D8BDB00C50418 /* ThreadHeadlineTVC.swift */; };
 		147F4E431B9D8BDB00C50418 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147F4E411B9D8BDB00C50418 /* Main.storyboard */; };
 		147F4E451B9D8BDB00C50418 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147F4E441B9D8BDB00C50418 /* Images.xcassets */; };
 		147F4E481B9D8BDB00C50418 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147F4E461B9D8BDB00C50418 /* LaunchScreen.xib */; };
 		147F4E541B9D8BDB00C50418 /* e_kudasaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E531B9D8BDB00C50418 /* e_kudasaiTests.swift */; };
-		147F4E5E1B9D8CFE00C50418 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E5D1B9D8CFE00C50418 /* Network.swift */; };
+		147F4E5E1B9D8CFE00C50418 /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E5D1B9D8CFE00C50418 /* REST.swift */; };
 		147F4E601B9D92D700C50418 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E5F1B9D92D700C50418 /* Util.swift */; };
-		147F4E681B9DD5E900C50418 /* ThreadUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E671B9DD5E900C50418 /* ThreadUIViewController.swift */; };
-		14D885DB1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D885D91B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift */; };
-		14D885DC1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D885DA1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib */; };
-		14D885DE1B9DFAE8007B333E /* ThreadHeadlineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D885DD1B9DFAE8007B333E /* ThreadHeadlineTableView.swift */; };
+		147F4E681B9DD5E900C50418 /* ThreadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F4E671B9DD5E900C50418 /* ThreadVC.swift */; };
+		14D885DB1B9DF7E4007B333E /* ThreadHeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D885D91B9DF7E4007B333E /* ThreadHeadlineCell.swift */; };
+		14D885DC1B9DF7E4007B333E /* ThreadHeadlineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D885DA1B9DF7E4007B333E /* ThreadHeadlineCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,22 +34,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		144248241B9E08D400262202 /* IllustCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IllustCell.swift; path = ../IllustCell.swift; sourceTree = "<group>"; };
+		144248251B9E08D400262202 /* IllustCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IllustCell.xib; path = ../IllustCell.xib; sourceTree = "<group>"; };
+		144248281B9E7A5000262202 /* ReactionHeadlineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionHeadlineVC.swift; sourceTree = "<group>"; };
 		147F4E361B9D8BDB00C50418 /* e-kudasai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-kudasai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		147F4E3A1B9D8BDB00C50418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		147F4E3B1B9D8BDB00C50418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		147F4E3D1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHeadlineTableViewController.swift; sourceTree = "<group>"; };
+		147F4E3D1B9D8BDB00C50418 /* ThreadHeadlineTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHeadlineTVC.swift; sourceTree = "<group>"; };
 		147F4E421B9D8BDB00C50418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		147F4E441B9D8BDB00C50418 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		147F4E471B9D8BDB00C50418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		147F4E4D1B9D8BDB00C50418 /* e-kudasaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "e-kudasaiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		147F4E521B9D8BDB00C50418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		147F4E531B9D8BDB00C50418 /* e_kudasaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_kudasaiTests.swift; sourceTree = "<group>"; };
-		147F4E5D1B9D8CFE00C50418 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		147F4E5D1B9D8CFE00C50418 /* REST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
 		147F4E5F1B9D92D700C50418 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		147F4E671B9DD5E900C50418 /* ThreadUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadUIViewController.swift; sourceTree = "<group>"; };
-		14D885D91B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadHeadlineCellTableViewCell.swift; sourceTree = "<group>"; };
-		14D885DA1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadHeadlineCellTableViewCell.xib; sourceTree = "<group>"; };
-		14D885DD1B9DFAE8007B333E /* ThreadHeadlineTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadHeadlineTableView.swift; sourceTree = "<group>"; };
+		147F4E671B9DD5E900C50418 /* ThreadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadVC.swift; sourceTree = "<group>"; };
+		14D885D91B9DF7E4007B333E /* ThreadHeadlineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadHeadlineCell.swift; sourceTree = "<group>"; };
+		14D885DA1B9DF7E4007B333E /* ThreadHeadlineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadHeadlineCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,14 +93,16 @@
 		147F4E381B9D8BDB00C50418 /* e-kudasai */ = {
 			isa = PBXGroup;
 			children = (
+				144248241B9E08D400262202 /* IllustCell.swift */,
+				144248251B9E08D400262202 /* IllustCell.xib */,
 				147F4E3B1B9D8BDB00C50418 /* AppDelegate.swift */,
-				147F4E3D1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift */,
-				14D885DD1B9DFAE8007B333E /* ThreadHeadlineTableView.swift */,
-				147F4E671B9DD5E900C50418 /* ThreadUIViewController.swift */,
-				14D885D91B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift */,
-				14D885DA1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib */,
+				147F4E3D1B9D8BDB00C50418 /* ThreadHeadlineTVC.swift */,
+				147F4E671B9DD5E900C50418 /* ThreadVC.swift */,
+				144248281B9E7A5000262202 /* ReactionHeadlineVC.swift */,
+				14D885D91B9DF7E4007B333E /* ThreadHeadlineCell.swift */,
+				14D885DA1B9DF7E4007B333E /* ThreadHeadlineCell.xib */,
 				147F4E5F1B9D92D700C50418 /* Util.swift */,
-				147F4E5D1B9D8CFE00C50418 /* Network.swift */,
+				147F4E5D1B9D8CFE00C50418 /* REST.swift */,
 				147F4E411B9D8BDB00C50418 /* Main.storyboard */,
 				147F4E441B9D8BDB00C50418 /* Images.xcassets */,
 				147F4E461B9D8BDB00C50418 /* LaunchScreen.xib */,
@@ -210,8 +216,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144248271B9E08D400262202 /* IllustCell.xib in Resources */,
 				147F4E431B9D8BDB00C50418 /* Main.storyboard in Resources */,
-				14D885DC1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.xib in Resources */,
+				14D885DC1B9DF7E4007B333E /* ThreadHeadlineCell.xib in Resources */,
 				147F4E481B9D8BDB00C50418 /* LaunchScreen.xib in Resources */,
 				147F4E451B9D8BDB00C50418 /* Images.xcassets in Resources */,
 			);
@@ -232,12 +239,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				147F4E3C1B9D8BDB00C50418 /* AppDelegate.swift in Sources */,
-				147F4E5E1B9D8CFE00C50418 /* Network.swift in Sources */,
-				14D885DE1B9DFAE8007B333E /* ThreadHeadlineTableView.swift in Sources */,
-				147F4E681B9DD5E900C50418 /* ThreadUIViewController.swift in Sources */,
+				147F4E5E1B9D8CFE00C50418 /* REST.swift in Sources */,
+				147F4E681B9DD5E900C50418 /* ThreadVC.swift in Sources */,
 				147F4E601B9D92D700C50418 /* Util.swift in Sources */,
-				147F4E3E1B9D8BDB00C50418 /* ThreadHeadlineTableViewController.swift in Sources */,
-				14D885DB1B9DF7E4007B333E /* ThreadHeadlineCellTableViewCell.swift in Sources */,
+				147F4E3E1B9D8BDB00C50418 /* ThreadHeadlineTVC.swift in Sources */,
+				144248291B9E7A5000262202 /* ReactionHeadlineVC.swift in Sources */,
+				14D885DB1B9DF7E4007B333E /* ThreadHeadlineCell.swift in Sources */,
+				144248261B9E08D400262202 /* IllustCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

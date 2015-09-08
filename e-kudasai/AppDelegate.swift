@@ -12,10 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var storage: NSUserDefaults = NSUserDefaults()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        if storage.objectForKey("user_id") == nil {
+            register_new_user({(statusCode, dir) in
+                if dir != nil && dir!["user_id"] != nil {
+                    let user_id = dir!["user_id"]! as! Int
+                    dispatch_async_main{
+                        self.storage.setObject(user_id, forKey: "user_id")
+                    }
+                }
+            })
+        }
         return true
     }
 

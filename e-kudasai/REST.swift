@@ -27,12 +27,21 @@ typealias Response = (
     like: Int
 )
 
-typealias Reaction = (
+/*typealias Reaction = (
     id: Int,
     date: Int,
     title: String,
     user_name: Int,
     responses: [Response]
+)*/
+
+typealias Reaction = (
+    type: Int,
+    date: Int,
+    title: String,
+    title_id: Int,
+    illust_id: Int,
+    illust_url: String
 )
 
 typealias Title = (
@@ -224,7 +233,7 @@ func get(url: String, callback: (Int, NSData!) -> Void) -> Void {
                 println(NSString(data: data, encoding: NSUTF8StringEncoding)!)
                 return
             }
-            println(NSString(data: data, encoding: NSUTF8StringEncoding)!)
+            //println(NSString(data: data, encoding: NSUTF8StringEncoding)!)
             callback(httpResponse!.statusCode, data)
         }
     )

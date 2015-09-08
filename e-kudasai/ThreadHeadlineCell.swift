@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThreadHeadlineCellTableViewCell: UITableViewCell {
+class ThreadHeadlineCell: UITableViewCell {
     @IBOutlet weak var _title: UILabel!
     @IBOutlet weak var _image: UIImageView!
     

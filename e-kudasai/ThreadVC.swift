@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ThreadUIViewController: UIViewController {
+class ThreadVC: UIViewController {
+    
     var entry: NSDictionary? = nil
+
     @IBOutlet var _id: UILabel?
     @IBOutlet var _date: UILabel?
     @IBOutlet var _title: UILabel?
     @IBOutlet var _user_name: UILabel?
-    
 
     override func viewDidLoad() {
         if self.entry == nil || self.entry!["title_id"] == nil {
@@ -24,7 +25,6 @@ class ThreadUIViewController: UIViewController {
         super.viewDidLoad()
         let title_id = self.entry!["title_id"]! as! Int // castに一貫性がなくJSONParserが怪しい
         get_responses(title_id, { (statusCode, dir) in
-            println(statusCode)
             println(dir)
             if dir != nil {
                 let id = (dir!["id"]! as! String).toInt()! // でもこうしないと落ちる
@@ -49,23 +49,5 @@ class ThreadUIViewController: UIViewController {
                 }
             }
         })
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

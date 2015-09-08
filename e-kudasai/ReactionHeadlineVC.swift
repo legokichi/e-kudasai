@@ -1,29 +1,33 @@
 //
-//  FirstViewController.swift
+//  MentionVC.swift
 //  e-kudasai
 //
-//  Created by yohsukeino on 2015/09/07.
+//  Created by yohsukeino on 2015/09/08.
 //  Copyright (c) 2015年 duxca. All rights reserved.
 //
-
+/*
+import Foundation
 import UIKit
 
-class ThreadHeadlineTableViewController: UITableViewController {
-    var entries: [NSDictionary] = []
+class ReactionHeadlineVC: UITableViewController {
+    var entries: [Reaction] = []
     
     // UIViewController
     override func viewDidLoad() {
         self.tableView?.dataSource = self
         self.tableView?.delegate = self
-        
+        let xib = UINib(nibName: "ThreadHeadlineCell", bundle: nil)
+        self.tableView?.registerNib(xib, forCellReuseIdentifier: "THCell")
         super.viewDidLoad()
-        get_titles({ (statusCode, dirs) in
+        
+        get_reactions(user_id, {(statusCode, dirs) in
+            println("get_reactions")
+            println(statusCode)
+            println(dirs)
             if dirs != nil {
                 self.entries = dirs as! [NSDictionary]
             }
             dispatch_async_main{
-                let xib = UINib(nibName: "ThreadHeadlineCellTableViewCell", bundle: nil)
-                self.tableView?.registerNib(xib, forCellReuseIdentifier: "ThreadHeadlineCellTabeleViewCell")
                 self.tableView?.reloadData()
             }
         })
@@ -31,13 +35,12 @@ class ThreadHeadlineTableViewController: UITableViewController {
     
     // UIViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println(segue.identifier)
         if segue.identifier == "showThread" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let entry = self.entries[indexPath.row]
-                println(segue.destinationViewController)
-                (segue.destinationViewController as! UIViewController).title = (entry["title"] as! String) ?? "no title"
-                (segue.destinationViewController as! ThreadUIViewController).entry = entry
+                let view = segue.destinationViewController as! ThreadVC
+                view.title = (entry["title"] as! String) ?? "no title"
+                view.entry = entry
             }
         }
     }
@@ -45,7 +48,7 @@ class ThreadHeadlineTableViewController: UITableViewController {
     // UITableViewDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //Cellが選択された際に呼び出されるデリゲートメソッド.
-        println(indexPath.row)
+        // force segue
         self.performSegueWithIdentifier("showThread", sender: self)
     }
     
@@ -56,15 +59,16 @@ class ThreadHeadlineTableViewController: UITableViewController {
     
     // UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        println(self.tableView.dequeueReusableCellWithIdentifier("THCell")!)
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("THCell") as! ThreadHeadlineCell
         let dir = entries[indexPath.row]
-        var title = ""
-        if dir["title"] == nil {
-            title = "no title"
-        }else{
-            title = dir["title"] as! String
-        }
-        cell.textLabel!.text = title
+        var title = (dir["title"] as! String) ?? "no title"
+        cell._title!.text = title
+        println("== Hoge ==")
+        println(cell._image)
+        cell._image?.loadAsyncFromURL("http://www.duxca.com/apple-touch-icon-72x72.png")
+        
         return cell
     }
 }
+*/
